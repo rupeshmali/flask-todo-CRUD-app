@@ -43,7 +43,7 @@ def delete(id):
        db.session.commit()
        return redirect('/')
     except:
-        return 'Error aala re'
+        return 'Error Found'
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
@@ -51,26 +51,13 @@ def update(id):
    
     if request.method == 'POST':
         task.content = request.form['content']
+        
         try:
-            db.session.commit
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            11
-            
-            
-            
-            ()
+            db.session.commit()
             return redirect('/')
         except:
-            return 'Error aala re'
+            return 'There was an isssue updating your task'
+            
     else:
         return render_template('update.html',task=task)
 
